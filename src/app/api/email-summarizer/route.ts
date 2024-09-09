@@ -14,6 +14,8 @@ export async function POST(req: Request) {
     system: 'You are an email summarizer.',
     prompt: content,
   });
-
-  return text;
+  return new Response(JSON.stringify({ text }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
