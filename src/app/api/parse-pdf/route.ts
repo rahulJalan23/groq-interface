@@ -13,7 +13,7 @@ export async function POST(req: Request) {
 
     const data = await PdfParse(buffer);
 
-    return NextResponse.json({ result: data.text }, { status: 200 });
+    return NextResponse.json({ text: data.text }, { status: 200 });
   } catch (e) {
     console.error(e);
     return NextResponse.json({ status: 'fail', error: e });
